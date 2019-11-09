@@ -1,0 +1,14 @@
+.col{
+    margin-left: 15px ;
+    margin-right: 485px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px 10px 10px 5px;
+    border: 12px solid palevioletred;
+}
+
+.section-titles{
+    font-size: 20px;
+    font-family: Algerian;
+    font-style: oblique;
+}

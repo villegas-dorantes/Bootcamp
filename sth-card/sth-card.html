@@ -1,0 +1,84 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="sth-card">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <img src="[[imgUrl]]" alt="[[imgAlt]]">
+    <h2>Hello [[title]]</h2>
+  </template>
+
+  <script>
+    /**
+     * `sth-card`
+     * Card to show a summary 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class SthCard extends Polymer.Element {
+      static get is() { return 'sth-card'; }
+      static get properties() {
+        return {
+          imgUrl:{
+            type: String
+          },
+          imgAlt:{
+            type:String
+          },
+          title:{
+            type:String
+          }
+
+        };
+      }
+    }
+
+    window.customElements.define(SthCard.is, SthCard);
+  </script>
+</dom-module>
+
+
+<dom-module id="sth-header">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <img src="[[imgUrl]]" alt="[[imgAlt]]">
+        <h2>Hello [[title]]</h2>
+    </template>
+
+    <script>
+        /**
+         * `sth-card`
+         * Card to show a summary
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class SthHeader extends Polymer.Element {
+            static get is() { return 'sth-header'; }
+            static get properties() {
+                return {
+                    title:{
+                        type:String
+                    },
+                    description:{
+                        type:String,
+
+                    }
+
+                };
+            }
+        }
+
+        window.customElements.define(SthHeader.is, SthHeader);
+    </script>
+</dom-module>

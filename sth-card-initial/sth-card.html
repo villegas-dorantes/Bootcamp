@@ -1,0 +1,106 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="sth-card">
+    <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+   <img src="[[imgUrl]]" alt="[[imgAlt]]">
+   <h1>[[title]]</h1>
+   <p>[[description]]</p>
+   <a href="[[sharedUrl.url]]">[[sharedUrl.text]]</a>
+   <a href="[[url.url]]">[[url.text]]</a>
+
+   <template is="dom-repeat" items="[[stores]]" as="store">
+       <div class="store">
+           <h1>[[store.name]]</h1>
+           <a href="[[store.url]]">ir a la tienda</a>
+       </div>
+   </template>
+
+    <p hidden="[[isVisbleTitleAndDescription]]">[[titleAndDescription]]</p>
+
+    [[stores.0.name]]
+    </template>
+
+    <script>
+        /**
+         * `sth-card`
+         * Card Component of Practice
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class SthCard extends Polymer.Element {
+            static get is() {
+                return 'sth-card';
+            }
+            static get properties() {
+                return {
+                    imgUrl: {
+                        type: String
+                    },
+                    imgAlt: {
+                        type: String
+                    },
+                    title: {
+                        type: String
+                    },
+                    description: {
+                        type: String
+                    },
+                    sharedUrl: {
+                        type: Object
+                    },
+                    url: {
+                        type: Object
+                    },
+                    titleAndDescription: {
+                        type: String,
+                        computed: '__computeTitleAndDescription(title, description)'
+                    },
+                    isVisibleTitleAndDescription: {
+                        type: Boolean,
+                        value: false
+                    },
+                    stores: {
+                        type: Array,
+                        value() {
+                            return [];
+                        }
+                    }
+                };
+            }
+            constructor() {
+                super();
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                    console.log(this.shadowRoot.querySelector('p'));
+                });
+            }
+            ready() {
+                super.ready();
+                console.log('ready');
+            }
+            connectedCallback() {
+                super.connectedCallback();
+                console.log('connectedCallback');
+            }
+            disconnectedCallback() {
+                super.disconnectedCallback();
+                console.log('disconnectedCallback');
+            }
+            attributeChangedCallback(attrName, oldValue, newValue) {
+                super.attributeChangedCallback(attrName, oldValue, newValue);
+                console.log('attributeChangedCallback');
+            }
+
+            __computeTitleAndDescription(title, description) {
+                return `${title} ${description}`;
+            }
+        }
+        window.customElements.define(SthCard.is, SthCard);
+    </script>
+</dom-module>

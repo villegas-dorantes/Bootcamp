@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>sth-card demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../sth-card.html">
+
+    <custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles">
+
+        </style>
+    </custom-style>
+</head>
+
+<body>
+    <div class="vertical-section-container centered">
+        <h3>Basic sth-card demo</h3>
+        <demo-snippet>
+            <template>
+          <sth-card
+            img-url="https://static.promodescuentos.com/pepperpdimages/threads/thread_large/default/387230_1.jpg"
+            img-alt="Audifonos"
+            title="Amazon: Audífonos inalambricos Sony"
+            description="Me pareció buen precio. Estaba buscando esos en otras páginas y están arriba de mil. Solo el negro"
+            shared-url='{ "url": "https://www.amazon.com.mx/dp/B079GXWSWG", "text": "Saber más..."}'
+            url='{ "url": "path/to/publication", "text": "Ver publicación" }'
+            is-visble-title-and-description
+            stores='[{ "name": "deLaEsquina","url":"http://www.pensemosweb.com" }]'>
+          </sth-card>
+        </template>
+        </demo-snippet>
+    </div>
+</body>
+
+</html>

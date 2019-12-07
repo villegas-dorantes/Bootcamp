@@ -9,10 +9,10 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+
 
     <form>
-      <template is="dom-repeat" id="form-inputs" items="[[fields]]" as="fields">
+      <template is="dom-repeat" id="form-inputs" items="[[prop1]]" as="prop1">
         <paper-input type="[[prop1.type]]" value="[[prop1.value]]" label="[[prop1.label]]"></paper-input>
       </template>
 
@@ -33,22 +33,26 @@
      * @demo demo/index.html
      */
     class PolymerForm extends Polymer.Element {
-      static get is() { return 'polymer-form'; }
+      static get is() {
+        return 'polymer-form';
+      }
+
       static get properties() {
         return {
-          actions:{
+          actions: {
             type: Array
           },
           prop1: {
             type: Array,
-            value(){
-              return[
-                {"type":"text", "value":"user", "label":"Usuario"},
-                {"type":"password", "value":"password", "label":"Contraseña"}
+            value() {
+              return [
+                {"type": "text", "value": "user", "label": "Usuario"},
+                {"type": "password", "value": "password", "label": "Contraseña"}
               ]
             }
-        },
-      };
+          },
+        };
+      }
     }
 
     window.customElements.define(PolymerForm.is, PolymerForm);

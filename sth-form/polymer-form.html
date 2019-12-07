@@ -1,0 +1,57 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<dom-module id="polymer-form">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+
+    <form>
+      <template is="dom-repeat" id="form-inputs" items="[[fields]]" as="fields">
+        <paper-input type="[[prop1.type]]" value="[[prop1.value]]" label="[[prop1.label]]"></paper-input>
+      </template>
+
+      <template is="dom-repeat" id="form-actions" items="[[actions]]" as="actions">
+        <paper-button class="[[actions.class]]" on-click="__test">[[actions.label]]</paper-button>
+      </template>
+    </form>
+
+  </template>
+
+  <script>
+    /**
+     * `polymer-form`
+     * formulario
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class PolymerForm extends Polymer.Element {
+      static get is() { return 'polymer-form'; }
+      static get properties() {
+        return {
+          actions:{
+            type: Array
+          },
+          prop1: {
+            type: Array,
+            value(){
+              return[
+                {"type":"text", "value":"user", "label":"Usuario"},
+                {"type":"password", "value":"password", "label":"Contraseña"}
+              ]
+            }
+        },
+      };
+    }
+
+    window.customElements.define(PolymerForm.is, PolymerForm);
+
+  </script>
+</dom-module>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>sth-card</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../sth-card.html">
+
+    <custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles">
+    .prueba{
+    background-color: #0b97c4;
+}
+        </style>
+    </custom-style>
+</head>
+
+<body>
+    <div class="vertical-section-container centered">
+        <h3>Mi Componente</h3>
+        <demo-snippet class="prueba">
+            <template>
+          <sth-card class="prueba"
+            img-url ="https://static.promodescuentos.com/pepperpdimages/threads/thread_large/default/387230_1.jpg"
+            img-alt="Audifonos"
+            title="Amazon: Audífonos Inalámbricos Sony"
+
+            description="El nuevo estándar de audio para juegos con un diseño ultra cómodo y dos micrófonos integrados,
+            el wireless headset gold para PS4 y PS VR te permite descubrir lo bien que suenan tus juegos.
+            Escucha a los enemigos que todavía no has visto y sumérgete en la acción más explosiva con sonido
+            virtual envolvente 7.1 en los juegos de PS4."
+
+            shared-url='{ "url": "https://www.promodescuentos.com/ofertas/audifonos-sony-wh1000xm3-391066", "text": "Saber más..."}'
+
+                </sth-card>
+
+                
+        </template>
+        </demo-snippet>
+    </div>
+</body>
+
+</html>
